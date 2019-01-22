@@ -156,6 +156,12 @@ ul, li {
 				letter-spacing: .2em;
 				cursor: pointer;
 			}
+
+			.app-button {
+  			padding: 0;
+  			border: none;
+  			background: none;
+  		}
 		}
 	}
 
@@ -362,6 +368,14 @@ ul, li {
 		  			bottom: -80px;
 		  			margin-top: 85px;
 		  			padding: 20px 35px;
+		  		}
+
+		  		.app-download-wrapper {
+		  			margin-top: 150px;
+
+		  			.app-button {
+		  				margin-top: 15px;
+		  			}
 		  		}
 		  	}
 	  	}
