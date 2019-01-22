@@ -1,6 +1,21 @@
 ---
 ---
-$font-stack: 'Avenir Next', Helvetica, sans-serif;
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/Nunito-ExtraLight.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NunitoBold';
+  src: url('../fonts/Nunito-Bold.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-stack: 'Nunito', Helvetica, sans-serif;
+$font-bold: 'NunitoBold', Helvetica, sans-serif;
 $teal: #729499;
 $darkteal: #1a4b51;
 $darkerteal: #113235;
@@ -18,7 +33,9 @@ $darkerteal: #113235;
 /* Global styles */
 
 body {
-	color: rgba(0,0,0,.7);
+	color: rgba(0, 0, 0, .8);
+	font-family: $font-stack;
+	font-weight: bold;
 }
 
 ul, li {
@@ -28,6 +45,24 @@ ul, li {
 }
 
 /* Header */
+
+.mobile-icon {
+	width: 40px;
+	display: block;
+
+	.line-1 {
+		width: 39px;
+		height: 1px;
+		background: rgba(0, 0, 0, .7);
+		margin-bottom: 9px;
+	}
+
+	.line-2 {
+		width: 20px;
+		height: 1px;
+		background: rgba(0, 0, 0, .7);
+	}
+}
 
 .site-header {
 	box-sizing: border-box;
@@ -40,9 +75,10 @@ ul, li {
 
 	.site-title {
 		text-transform: uppercase;
+		font-family: 'Helvetica', sans-serif;
 		font-weight: bold;
 		font-size: 32px;
-		letter-spacing: .3em;
+		letter-spacing: .2em;
 
 		&:hover {
 			text-decoration: none;
@@ -64,7 +100,6 @@ ul, li {
 .teal {
 	background-color: $teal;
 }
-
 
 
 .page-content {
@@ -269,4 +304,115 @@ ul, li {
 
 .button:hover {
 	background: $darkerteal;
+}
+
+/* Mobile layout */
+
+@media only screen and (max-width: 500px) {
+  body {
+  	
+  	.wrapper {
+  		padding: 0;
+  	}
+
+  	.site-header {
+  		padding: 25px 25px 50px 25px;
+
+  		.site-title {
+	    	font-size: 22px;
+	    	display: block;
+	    }
+
+	    .site-subtitle {
+	    	font-size: 15px;
+	    }
+  	}
+  	
+  	.page-content {
+
+  		.hero-wrapper {
+  			background: url('../img/pills.png');
+  			background-color: #d5e6e5;
+  			padding: 0;
+  			margin-bottom: 100px;
+  		}
+
+  		.hero {
+	  		color: rgba(0,0,0,.7);
+		  	
+		  	.preview-wrapper {
+		  		display: none;
+		  	}
+
+		  	.hero-info {
+		  		width: 100%;
+		  		float: none;
+		  		font-size: 25px;
+	  			text-align: right;
+	  			line-height: 38px;
+
+	  			p {
+	  				margin-top: -60px;
+	  			}
+
+		  		.button {
+		  			position: absolute;
+		  			width: 92%;
+		  			left: 4%;
+		  			bottom: -80px;
+		  			margin-top: 85px;
+		  			padding: 20px 35px;
+		  		}
+		  	}
+	  	}
+
+	  	.main-info {
+	  		padding: 0 10px;
+	  		margin-bottom: 10px;
+
+	  		h2 {
+	  			font-size: 28px;
+	  			letter-spacing: .1em;
+	  			margin-bottom: 10px;
+	  		}
+
+	  		.info-about {
+	  			width: 100%;
+	  			padding: 0 10px;
+	  			font-size: 24px;
+	  		}
+
+	  		.info-images {
+	  			display: none;
+	  		}
+	  	}
+  	}
+   	
+   	.site-footer {
+  		padding-top: 15px;
+  		margin-bottom: 125px;
+
+  		.footer-wrapper {
+  			padding: 0 10px;
+
+  			.input-wrapper {
+  				width: 100%;
+  				margin-bottom: 15px;
+
+  				input[type="text"] {
+  					width: 235px;
+  				}
+  			}
+  		}
+
+  		.signup-info {
+  			width: 100%;
+  			font-size: 25px;
+  			padding: 0 10px;
+  			line-height: 1.2;
+  			font-weight: 100;
+  			text-align: center;
+  		}
+  	}
+  }
 }
