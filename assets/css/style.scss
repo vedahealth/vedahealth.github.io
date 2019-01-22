@@ -1,3 +1,272 @@
 ---
 ---
+$font-stack: 'Avenir Next', Helvetica, sans-serif;
+$teal: #729499;
+$darkteal: #1a4b51;
+$darkerteal: #113235;
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 @import "{{ site.theme }}";
+
+/* Global styles */
+
+body {
+	color: rgba(0,0,0,.7);
+}
+
+ul, li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Header */
+
+.site-header {
+	box-sizing: border-box;
+	padding: 35px 65px;
+	border: none;
+	
+	.site-title-wrapper {
+		@include clearfix;
+	}
+
+	.site-title {
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 32px;
+		letter-spacing: .3em;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.site-subtitle {
+		font-size: 22px;
+		font-weight: 100;
+	}
+}
+
+/* Landing Page */
+
+.wrapper {
+	max-width: calc(1445px - (30px * 2))
+}
+
+.teal {
+	background-color: $teal;
+}
+
+
+
+.page-content {
+	padding: 0;
+	
+	.hero-wrapper {
+		padding: 30px 0;
+		background-color: $teal;
+		margin-bottom: 300px;
+	}
+
+	.hero {
+		height: calc(425px - 60px); /* height of hero - top & bottom padding */
+		color: #fff;
+		@include clearfix;
+
+		.preview-wrapper {
+			position: relative;
+			width: 50%;
+			height: 100%;
+			float: left;
+
+			img {
+				position: absolute;
+			}
+
+			.ios-preview {
+				top: -50px;
+				left: -65px;
+			}
+
+			.watch-preview {
+				top: 210px;
+				left: 335px;
+			}
+		}
+
+		.hero-info {
+			float: left;
+			width: 50%;
+			height: 100%;
+			font-size: 46px;
+			padding: 25px;
+			box-sizing: border-box;
+			position: relative;
+
+			.button {
+				width: 375px;
+				bottom: -125px;
+				box-sizing: border-box;
+				position: absolute;
+				padding: 25px 60px;
+				font-size: 20px;
+				letter-spacing: .2em;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.main-info {
+		@include clearfix;
+		margin-bottom: 275px;
+
+		h2 {
+			text-align: center;
+			font-size: 40px;
+			letter-spacing: .2em;
+			text-transform: uppercase;
+			margin-bottom: 50px;
+		}
+
+		.info-about,
+		.info-images {
+			width: 50%;
+			float: left;
+			box-sizing: border-box;
+		}
+
+		.info-about {
+			font-size: 30px;
+			padding: 0 150px;
+
+			li {
+				padding: 25px 0;
+				padding-left: 75px;
+				background-position: 0,0 ;
+				background-repeat: no-repeat;
+
+				&:nth-child(1) {
+					background-image: url('../img/icon-organic.png');
+				}
+				
+				&:nth-child(2) {
+					background-image: url('../img/icon-leaf.png');
+				}
+				
+				&:nth-child(3) {
+					background-image: url('../img/icon-sustainable.png');
+				}
+
+				&:nth-child(4) {
+					background-image: url('../img/icon-no-pesticides.png');
+					background-position: -8px, 0;
+				}
+			}
+		}
+
+		.info-images {
+			position: relative;
+
+			img {
+				position: absolute;
+
+				&:nth-child(1) {
+					left: 0;
+					top: 0;
+					z-index: 3;
+				}
+
+				&:nth-child(2) {
+					right: -30px;
+					top: 125px;
+					z-index: 2;
+				}
+
+				&:nth-child(3) {
+					left: -120px;
+					top: 300px;
+					z-index: 1;
+				}
+			}
+			
+		}
+
+	}
+}
+
+.site-footer {
+	background-color: $teal;
+	color: #fff;
+	padding: 50px 0;
+	font-size: 30px;
+	line-height: 49px;
+	font-weight: 100;
+
+	.footer-wrapper {
+		text-align: center;
+		padding: 0 10%;
+		@include clearfix;
+	}
+
+	.input-wrapper {
+		width: 35%;
+		box-sizing: border-box;
+		float: left;
+		margin-top: 18px;
+
+		input[type="text"] {
+			border: 1px solid rgba(255,255,255, .7);
+			background-color: $teal;
+			width: 250px;
+			height: 50px;
+			padding: 20px 30px;
+			box-sizing: border-box;
+			border-radius: 5px;
+			font-size: 14px;
+			color: #fff;
+
+			&::placeholder {
+				color: rgba(255,255,255, .7);
+			}
+		}
+
+		.button {
+			height: 50px;
+			font-size: 14px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	.signup-info {
+		width: 65%;
+		padding: 0 15% 0 5%;
+		box-sizing: border-box;
+		text-align: left;
+		float: right;
+	}
+}
+
+.button {
+	background: $darkteal;
+	color: #fff;
+	transition: all .3s;
+	width: 100px;
+	border-radius: 5px;
+	padding: 10px 25px;
+	border: 1px solid $darkteal;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.button:hover {
+	background: $darkerteal;
+}
