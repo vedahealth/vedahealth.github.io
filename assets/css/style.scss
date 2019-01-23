@@ -404,6 +404,8 @@ ul, li {
 	transition: all .3s;
 	width: 100px;
 	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-webkit-appearance: none;
 	padding: 10px 25px;
 	border: 1px solid $darkteal;
 	text-transform: uppercase;
