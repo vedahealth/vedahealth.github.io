@@ -16,6 +16,7 @@
 
 $font-stack: 'Nunito', Helvetica, sans-serif;
 $font-bold: 'NunitoBold', Helvetica, sans-serif;
+$lightteal: #d4e0dd;
 $teal: #729499;
 $darkteal: #1a4b51;
 $darkerteal: #113235;
@@ -42,6 +43,100 @@ ul, li {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+}
+
+/* Modal */
+
+.modal-wrapper {
+	display:none;
+	
+	&.active {
+		display: block;
+	}
+
+	.modal {
+		width: 90%;
+		height: 300px;
+		padding: 15px;
+		max-width: 600px;
+		position: absolute;
+		z-index: 10;
+		left: 50%;
+		top: 50%;
+	  transform: translateY(-50%);
+		margin-left: -350px;
+		box-shadow: 0 5px 15px rgba(0,0,0,.5);
+		border: 1px solid rgba(0,0,0,.2);
+	  border-radius: 6px;
+	  background: #fff;
+	  color: rgba(0, 0, 0, .7);
+
+	  .modal-header {
+	  	border-bottom: 1px solid #ccc;
+	  	padding: 0 10px;
+
+	  	h4 {
+	  		margin-bottom: 0;
+	  		text-align: left;
+	  	}
+
+	  	.close-button {
+		  	float: right;
+		    font-size: 21px;
+		    font-weight: 700;
+		    line-height: 1;
+		    margin-top: 10px;
+		    color: #000;
+		    text-shadow: 0 1px 0 #fff;
+		    filter: alpha(opacity=20);
+		    opacity: .2;
+		    border: none;
+		    cursor: pointer;
+		  }
+	  }
+
+	  .input-wrapper {
+	  	position: absolute;
+	  	top: 50%;
+	  	left: 0;
+	  	transform: translateY(-50%);
+	  }
+	  
+	}
+
+	.modal-overlay {
+  	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    background: rgba(0, 0, 0, .3);
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+    z-index: 9;
+  }
+}
+
+#signup-modal {
+	text-align: center;
+
+	.input-wrapper {
+  	width: 100%;
+  	margin-bottom: 50px;
+
+  	input[type="email"] {
+  		width: 75%;
+  	}
+  }
+
+  .signup-info {
+  	width: 100%;
+  }
 }
 
 /* Header */
@@ -158,9 +253,15 @@ ul, li {
 			}
 
 			.app-button {
+				width: 165px;
   			padding: 0;
   			border: none;
   			background: none;
+
+  			img {
+  				width: 150px;
+  				height: 50px;
+  			}
   		}
 		}
 	}
@@ -317,7 +418,30 @@ ul, li {
 
 @media only screen and (max-width: 500px) {
   body {
-  	
+  	#signup-modal {
+  		width: 87%;
+  		position:fixed;
+  		left: 2%;
+  		top: 50%;
+  		margin-left: 0;
+    	transform: translateY(-50%);
+
+    	.input-wrapper {
+    		input[type="email"] {
+    			width: 95%;
+    			margin-bottom: 25px;
+    		}
+
+    		.clear {
+    			width: 100%;
+
+    			.button {
+    				width: 95%;
+    			}
+    		}
+    	}
+  	}
+
   	.wrapper {
   		padding: 0;
   	}

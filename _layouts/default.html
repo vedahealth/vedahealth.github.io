@@ -13,6 +13,23 @@
 
     {%- include footer.html -%}
 
+  <script>
+    (function() {
+      let launchModal = document.querySelector('.launch-modal'),
+          modal = document.querySelector('.modal'),
+          modalWrapper = document.querySelector('.modal-wrapper'),
+          modalClose = document.querySelector('.modal-close');
+
+      launchModal.onclick = () => {
+        modalWrapper.classList.add('active');
+      }
+
+      modalClose.onclick = () => {
+        modalWrapper.classList.remove('active');
+      }
+
+    })();
+  </script>
   </body>
 
 </html>
