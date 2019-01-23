@@ -18,6 +18,7 @@
       let launchModal = document.querySelector('.launch-modal'),
           modal = document.querySelector('.modal'),
           modalWrapper = document.querySelector('.modal-wrapper'),
+          modalOverlay = document.querySelector('.modal-overlay'),
           modalClose = document.querySelector('.modal-close');
 
       launchModal.onclick = () => {
@@ -27,6 +28,10 @@
       modalClose.onclick = () => {
         modalWrapper.classList.remove('active');
       }
+
+      modalOverlay.onclick = () => {
+        modalWrapper.classList.remove('active');
+      }      
 
     })();
   </script>
