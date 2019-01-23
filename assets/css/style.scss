@@ -264,7 +264,7 @@ ul, li {
 		float: left;
 		margin-top: 18px;
 
-		input[type="text"] {
+		input[type="email"] {
 			border: 1px solid rgba(255,255,255, .7);
 			background-color: $teal;
 			width: 250px;
@@ -413,7 +413,7 @@ ul, li {
   				width: 100%;
   				margin-bottom: 15px;
 
-  				input[type="text"] {
+  				input[type="email"] {
   					width: 225px;
   				}
   			}
