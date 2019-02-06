@@ -416,6 +416,86 @@ ul, li {
 	background: $darkerteal;
 }
 
+/* Tablet layout */
+
+@media only screen and (min-width: 501px) and (max-width: 1200px) {
+	body {
+		.page-content {
+			.hero-wrapper {
+				margin-bottom: 100px;
+
+				.hero {
+					.hero-info {
+						width: 55%;
+						font-size: 40px;
+
+						.app-button {
+							width: auto;
+						}
+					}
+
+					.preview-wrapper {
+						width: 45%;
+					}
+
+					.ios-preview {
+						top: -25px;
+					}
+
+					.watch-preview {
+						display: none;
+					}
+
+					.join-btn {
+						position: inherit;
+						bottom: 0;
+						margin: 20px;
+						margin-left: 0;
+					}
+				}
+			}
+
+			.main-info {
+				margin-bottom: 50px;
+
+				.info-images {
+					display: none;
+				}
+
+				.info-about {
+					width: 100%;
+				}
+			}
+		}
+
+		.site-footer {
+			
+			.input-wrapper {
+				width: 46%;
+				
+				input[type="email"] {
+					width: 65%;
+				}
+
+				.button {
+
+				}
+			}
+
+			.footer-wrapper {
+				padding: 0 3%;
+
+				.signup-info {
+					width: 50%;
+					font-size: 28px;
+					line-height: 40px;
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
 /* Mobile layout */
 
 @media only screen and (max-width: 500px) {
@@ -465,6 +545,7 @@ ul, li {
 
   		.hero-wrapper {
   			background: url('../img/pills.png');
+  			background-size: 100%;
   			background-color: #d5e6e5;
   			padding: 0;
   			margin-bottom: 120px;
